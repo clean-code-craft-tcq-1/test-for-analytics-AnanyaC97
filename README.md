@@ -53,9 +53,9 @@ Write tests in the form of `<expected output or action>` from `<input>` / when `
 Add to these tests:
 
 1. Write minimum and maximum to the PDF from a csv containing positive and negative readings
-2. Write "Invalid input" to the PDF from the csv when the csv doesn't contain expected data
-3. Write "No Data" to the PDF from the csv when the csv doesn't contain any data
-4. Write the breach count to the PDF from the csv when the number of times the readings crosses the threshold in a month
+2. Write "Invalid input" to the PDF when the csv doesn't contain expected data
+3. Write "No Data" to the PDF when the csv doesn't contain any data
+4. Write the breach count to the PDF when the number of times the readings crosses the threshold in a month
 5. Write Date and Time to the PDF when the reading was continuously increasing for 30 mins
 6. Write "Success" when all the reports are stored successfully to the PDF
 7. Write a notification stating when a new PDF report is available
@@ -72,8 +72,8 @@ Enter one part that's real and another part that's faked/mocked.
 |--------------------------|--------------|-----------------------------|---
 Read input from server     | csv file     | internal data-structure     | Fake the server store
 Validate input             | csv data     | valid / invalid             | None - it's a pure function
-Notify report availability | pdf file     | True / false                |  
-Report inaccessible server | csv file     | No access to the server     |
-Find minimum and maximum   | csv data     | Minimum / Maximum           | 
-Detect trend               | csv data     | Data & Time , Reading       | 
-Write to PDF               | csv data     | Minimum, Maximum, Date & Time, Reading | 
+Notify report availability | pdf file     | True / false                | Fake the Notification
+Report inaccessible server | csv file     | No access to the server     | Fake the server store
+Find minimum and maximum   | csv data     | Minimum / Maximum           | None - it's a pure function
+Detect trend               | csv data     | Data & Time , Reading       | None - it's a pure function
+Write to PDF               | csv data     | Minimum, Maximum, Date & Time, Reading | Fake the PDF store
